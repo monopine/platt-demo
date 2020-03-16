@@ -9,36 +9,40 @@
       />
       <button type="submit">
         <div class="center">
-          <img
-            alt="Submit Search Query"
-            src="../assets/icons/black/ic_search.png"
-          />
+          <img alt="Submit Search Query" src="../assets/icons/black/ic_search.png" />
         </div>
       </button>
       <ul class="search-results" v-show="isOpen">
-        <li
-          class="result"
-          v-for="(result, i) in results"
-          :key="i"
-          @click="setResult(result)"
-        >
+        <li class="result" v-for="(result, i) in results" :key="i" @click="setResult(result)">
           <a :href="result.url">
             <div class="thumbnail">
               <img :src="result.thumbnail" :alt="'image of' + result.name" />
             </div>
             <ul class="specifications">
-              <li><span class="label">Name: </span>{{ result.name }}</li>
               <li>
-                <span class="label">Birthyear: </span>{{ result.birth_year }}
+                <span class="label">Name:</span>
+                {{ result.name }}
               </li>
               <li>
-                <span class="label">Eye-Color: </span>{{ result.eye_color }}
+                <span class="label">Birthyear:</span>
+                {{ result.birth_year }}
               </li>
               <li>
-                <span class="label">Hair-Color: </span>{{ result.hair_color }}
+                <span class="label">Eye-Color:</span>
+                {{ result.eye_color }}
               </li>
-              <li><span class="label">Height: </span>{{ result.height }}</li>
-              <li><span class="label">Mass: </span>{{ result.mass }}</li>
+              <li>
+                <span class="label">Hair-Color:</span>
+                {{ result.hair_color }}
+              </li>
+              <li>
+                <span class="label">Height:</span>
+                {{ result.height }}
+              </li>
+              <li>
+                <span class="label">Mass:</span>
+                {{ result.mass }}
+              </li>
             </ul>
           </a>
         </li>
@@ -75,7 +79,6 @@ export default {
           return response.json();
         })
         .then(data => {
-          console.log(data.results);
           this.results = data.results.map(result => {
             return {
               thumbnail: "https://spaceholder.cc/200x166",

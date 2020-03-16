@@ -3,8 +3,9 @@ $goblin: #3b853e;
 $goblin-light: #33a05c;
 
 $dove-gray: #666666;
-$gallery: #eeeeee;
+$alto: #d3d3d3;
 $silver: #c9c9c9;
+$gallery: #eeeeee;
 
 $brand-primary: $goblin;
 $brand-light: $goblin-light;
@@ -14,6 +15,6 @@ $body-bg: $gallery;
 $footer-bg: $dove-gray;
 
 // Media Queries
-$tablet: 768px;
-$large: 1094px;
-$xl: 1260px;
+$bp-tablet: 768px;
+$bp-large: 1094px;
+$bp-xl: 1260px;

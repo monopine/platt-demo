@@ -6,22 +6,30 @@
     <div class="controls">
       <button
         class="search-toggle"
-        @click="searchVisible ? searchVisible = false : searchVisible = true"
+        @click="
+          searchVisible ? (searchVisible = false) : (searchVisible = true)
+        "
       >
         <img alt="Search Icon" src="../assets/icons/white/ic_search.png" />
       </button>
       <button class="shopping-cart">
-        <img alt="Shopping Cart Icon" src="../assets/icons/white/ic_shopping_cart.png" />
+        <img
+          alt="Shopping Cart Icon"
+          src="../assets/icons/white/ic_shopping_cart.png"
+        />
       </button>
       <button class="profile-link">
         <img alt="Profile Icon" src="../assets/icons/white/ic_person.png" />
       </button>
-      <button class="menu-toggle" @click="menuVisible ? menuVisible = false : menuVisible = true">
+      <button
+        class="menu-toggle"
+        @click="menuVisible ? (menuVisible = false) : (menuVisible = true)"
+      >
         <img alt="Menu Toggle" src="../assets/icons/white/ic_menu.png" />
       </button>
     </div>
-    <SiteSearch v-if="searchVisible" />
-    <SiteMenu v-if="menuVisible" />
+    <SiteSearch :class="searchVisible ? ' -active' : ''" />
+    <SiteMenu :class="menuVisible ? ' -active' : ''" />
   </div>
 </template>
 
@@ -49,6 +57,11 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 1.5rem 1rem 1rem;
+
+  @media (min-width: $bp-tablet) {
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+  }
 }
 
 .logo {

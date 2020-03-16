@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 .site-menu {
   background: white;
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-bottom: -1rem;
   margin-left: -1rem;
@@ -52,10 +52,18 @@ export default {
   padding: 0 1rem;
   width: calc(100% + 2rem);
 
-  @media (min-width: $tablet) {
+  @media (min-width: $bp-tablet) {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: -2.2rem;
+    margin-right: -2.2rem;
+    width: calc(100% + 4.4rem);
   }
+}
+
+.site-menu.-active {
+  display: flex;
 }
 
 .site-menu > a {
@@ -68,24 +76,25 @@ export default {
   position: relative;
   width: 100%;
 
-  @media (min-width: $tablet) {
+  @media (min-width: $bp-tablet) {
     background-image: none;
     border-right: 0.1rem solid $silver;
     text-align: center;
     width: 33.33%;
+    padding: 1rem;
   }
 
   &:last-of-type {
     border-bottom: none;
 
-    @media (min-width: $tablet) {
+    @media (min-width: $bp-tablet) {
       border-bottom: 0.1rem solid $silver;
     }
   }
 
   &:nth-of-type(1),
   &:nth-of-type(3n + 4) {
-    @media (min-width: $tablet) {
+    @media (min-width: $bp-tablet) {
       border-right-color: transparent;
     }
   }
@@ -98,7 +107,7 @@ export default {
   padding-bottom: 2rem;
   padding-top: 2rem;
 
-  @media (min-width: $tablet) {
+  @media (min-width: $bp-tablet) {
     width: 100%;
     text-align: center;
   }
@@ -108,7 +117,7 @@ export default {
   left: 1rem;
   position: absolute;
 
-  @media (min-width: $tablet) {
+  @media (min-width: $bp-tablet) {
     display: inline-block;
     margin-right: 1.5rem;
     position: relative;
@@ -117,7 +126,7 @@ export default {
 }
 
 .site-menu > a.primary img {
-  @media (min-width: $tablet) {
+  @media (min-width: $bp-tablet) {
     margin-top: -0.3rem;
     margin-right: 1rem;
     position: relative;
